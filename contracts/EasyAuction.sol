@@ -4,7 +4,7 @@ import "@openzeppelin/contracts/token/ERC20/SafeERC20.sol";
 import "./libraries/IterableOrderedOrderSet.sol";
 import "@openzeppelin/contracts/math/Math.sol";
 import "@openzeppelin/contracts/math/SafeMath.sol";
-import "./libraries/IdToAddressBiMap.sol";
+//import "./libraries/IdToAddressBiMap.sol";
 import "./libraries/SafeCast.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "./interfaces/AllowListVerifier.sol";
