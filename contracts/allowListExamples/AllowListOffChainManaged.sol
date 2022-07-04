@@ -48,6 +48,7 @@ contract AllowListOffChainManaged {
         uint256 auctionId,
         bytes calldata callData
     ) external view returns (bytes4) {
+        require(user != address(0));
         return isAllowedBy(user, auctionId, msg.sender, callData);
     }
 
