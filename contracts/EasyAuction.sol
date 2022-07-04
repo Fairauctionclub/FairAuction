@@ -125,7 +125,7 @@ contract EasyAuction is Ownable {
     constructor() public Ownable() {}
 
     uint256 public feeNumerator = 0;
-    uint256 public constant FEE_DENOMINATOR = 1000;
+    uint256 public constant FEE_DENOMINATOR = 10000;
     uint64 public feeReceiverUserId = 1;
 
 }
