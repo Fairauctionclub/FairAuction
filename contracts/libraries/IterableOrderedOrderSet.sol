@@ -146,6 +146,7 @@ library IterableOrderedOrderSet {
     // 1. their price - buyAmount/sellAmount
     // 2. by the sellAmount
     // 3. their userId,
+    // 4.
     function smallerThan(bytes32 orderLeft, bytes32 orderRight)
         internal
         pure
