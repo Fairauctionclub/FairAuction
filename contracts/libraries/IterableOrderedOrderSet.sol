@@ -147,11 +147,7 @@ library IterableOrderedOrderSet {
     // 2. by the sellAmount
     // 3. their userId,
     // 4.
-    function smallerThan(bytes32 orderLeft, bytes32 orderRight)
-        internal
-        pure
-        returns (bool)
-    {
+    function smallerThan(bytes32 orderLeft, bytes32 orderRight)  internal pure returns (bool) {
         (
             uint64 userIdLeft,
             uint96 priceNumeratorLeft,
