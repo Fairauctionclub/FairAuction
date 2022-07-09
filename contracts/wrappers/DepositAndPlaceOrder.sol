@@ -7,9 +7,7 @@ contract DepositAndPlaceOrder {
     EasyAuction public immutable easyAuction;
     IWETH public immutable nativeTokenWrapper;
 
-    constructor(address easyAuctionAddress, address _nativeTokenWrapper)
-        public
-    {
+    constructor(address easyAuctionAddress, address _nativeTokenWrapper) public{
         nativeTokenWrapper = IWETH(_nativeTokenWrapper);
         easyAuction = EasyAuction(easyAuctionAddress);
         IERC20(_nativeTokenWrapper).approve(easyAuctionAddress, uint256(-1));
