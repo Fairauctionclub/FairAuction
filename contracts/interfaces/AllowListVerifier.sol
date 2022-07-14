@@ -19,4 +19,5 @@ interface AllowListVerifier {
         uint256 auctionId,
         bytes calldata callData
     ) external view returns (bytes4);
+    
 }
