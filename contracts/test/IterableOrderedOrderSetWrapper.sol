@@ -60,8 +60,7 @@ contract IterableOrderedOrderSetWrapper {
         uint96 sellAmount,
         uint96 buyAmount
     ) public pure returns (bytes32) {
-        return
-            IterableOrderedOrderSet.encodeOrder(userId, sellAmount, buyAmount);
+        return IterableOrderedOrderSet.encodeOrder(userId, sellAmount, buyAmount);
     }
 
     function smallerThan(bytes32 orderLeft, bytes32 orderRight) public pure returns (bool) {
