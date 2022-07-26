@@ -51,15 +51,7 @@ contract IterableOrderedOrderSetWrapper {
         return data.prevMap[value];
     }
 
-    function decodeOrder(bytes32 value)
-        public
-        pure
-        returns (
-            uint64,
-            uint96,
-            uint96
-        )
-    {
+    function decodeOrder(bytes32 value) public pure returns ( uint64, uint96, uint96) {
         return IterableOrderedOrderSet.decodeOrder(value);
     }
 
