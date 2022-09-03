@@ -42,4 +42,41 @@ contract AllowListOffChainManaged {
             )
         );
     }
+    function isAllowed(
+        address user,
+        uint256 auctionId,
+        bytes calldata callData
+    ) external view returns (bytes4) {
+        require(user != address(0));
+        return isAllowedBy(user, auctionId, msg.sender, callData);
+    }
+
+    function isAllowedBy(
+        address user,
+        uint256 auctionId,
+        address allower,
+        bytes calldata callData
+    ) public view returns (bytes4) {
+        uint8 v;
+        bytes32 r;
+        bytes32 s;
+        (v, r, s) = abi.decode(callData, (uint8, bytes32, bytes32));
+        bytes32 hash = keccak256(abi.encode(domainSeparator, user, auctionId));
+        address signer =
+            ecrecover(
+                keccak256(
+                    abi.encodePacked("\x19Ethereum Signed Message:\n32", hash)
+                ),
+                v,
+                r,
+                s
+            );
+        bytes memory allowListData =
+            EasyAuction(allower).auctionAccessData(auctionId);
+        if (abi.decode(allowListData, (address)) == signer) {
+            return AllowListVerifierHelper.MAGICVALUE;
+        } else {
+            return bytes4(0);
+        }
+    }
 }
